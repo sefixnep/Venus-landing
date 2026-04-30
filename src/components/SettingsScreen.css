@@ -1,19 +1,22 @@
 .settings-screen {
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   padding: 24px;
   position: relative;
-  overflow: auto;
   background:
     radial-gradient(ellipse at 30% 30%, rgba(80, 40, 30, 0.4) 0%, transparent 60%),
     radial-gradient(ellipse at 70% 80%, rgba(40, 20, 60, 0.5) 0%, transparent 55%),
     #06050b;
+  -webkit-overflow-scrolling: touch;
 }
 
 .venus-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -29,9 +32,11 @@
 .settings-container {
   max-width: 560px;
   width: 100%;
+  margin: auto;
   position: relative;
   z-index: 1;
   animation: fade-in-up 0.6s ease;
+  flex-shrink: 0;
 }
 
 @keyframes fade-in-up {
